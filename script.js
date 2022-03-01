@@ -1,6 +1,7 @@
 function otsikko(input) {
     let sanat = [];
     sanat = input.split(" ");
+    const capitalize = (sana) => sana[0].toUpperCase() + sana.substring(1)
 
     uudetSanat = sanat.map((sana, i, sanat) => {
         if (
@@ -14,14 +15,6 @@ function otsikko(input) {
     });
 
     return uudetSanat.join(' ')
-}
-
-function capitalize(sana) {
-    sanaSplit = sana.split('')
-    return [
-        sanaSplit[0].toUpperCase(),
-        ...sanaSplit.slice(1)
-    ].join('')
 }
 
 // SÄÄNNÖT
