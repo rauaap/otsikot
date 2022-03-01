@@ -1,10 +1,20 @@
 function otsikko(input) {
     let sanat = [];
     sanat = input.split(" ");
+    const capitalize = (sana) => sana[0].toUpperCase() + sana.substring(1)
 
-    for (let i = 0; i < sanat.length; i++) {
+    uudetSanat = sanat.map((sana, i, sanat) => {
+        if (
+            viisiKirjainta(sana) ||
+            firstAndLastWord(i, sanat.length) ||
+            prepositiotYms(sana)
+        ) {
+            return capitalize(sana)
+        }
+        return sana
+    });
 
-    }
+    return uudetSanat.join(' ')
 }
 
 // SÄÄNNÖT
