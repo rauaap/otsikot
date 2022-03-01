@@ -2,9 +2,26 @@ function otsikko(input) {
     let sanat = [];
     sanat = input.split(" ");
 
-    for (let i = 0; i < sanat.length; i++) {
+    uudetSanat = sanat.map((sana, i, sanat) => {
+        if (
+            viisiKirjainta(sana) ||
+            firstAndLastWord(i, sanat.length) ||
+            prepositiotYms(sana)
+        ) {
+            return capitalize(sana)
+        }
+        return sana
+    });
 
-    }
+    return uudetSanat.join(' ')
+}
+
+function capitalize(sana) {
+    sanaSplit = sana.split('')
+    return [
+        sanaSplit[0].toUpperCase(),
+        ...sanaSplit.slice(1)
+    ].join('')
 }
 
 // SÄÄNNÖT
