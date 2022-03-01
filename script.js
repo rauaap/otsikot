@@ -12,3 +12,16 @@ function otsikko(input) {
 function viisiKirjainta(sana) {
     return sana.length >= 5;
 }
+
+function firstAndLastWord(index, length) {
+ 
+    if (index == 0 || index == length - 1)
+    {
+        return true;
+    }
+
+    else
+    {
+        return false;
+    }
+}
